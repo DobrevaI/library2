@@ -6,7 +6,11 @@ if "books" not in st.session_state:
   author=st.text_input("book author")
   price=st.number_input("book price", min_value=0.0)
   if st.button("Add the book"):
-    book=["title": title, "author": author, "price": price]
+    book=[
+      "title": title,
+      "author": author,
+      "price": price
+       ]
     st.session_state.book.append(book)
     st.success("The book has been added!")
     if st.button("Show all books"):
