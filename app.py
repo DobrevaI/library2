@@ -18,9 +18,9 @@ if "books" not in st.session_state:
         st.write("There aren't any added books")
       else:
         for book in st.session_state.books:
-          st.write("title", book[title])
-          st.write("author", book[author])
-          st.write("price", book[price])
+          st.write("title", book["title"])
+          st.write("author", book["author"])
+          st.write("price", book["price"])
           st.write("--------------------")
           search_author=st.text_input("Enter the author's name")
           if st.button("search author"):
@@ -31,7 +31,7 @@ if "books" not in st.session_state:
                 found=True
               if found==False:
                 st.write("The author isn't found")
-                search_title=st.text_input("Enter the book's title")
+          search_title=st.text_input("Enter the book's title")
           if st.button("search title"):
             found=False
             for book in st.session_state.books:
